@@ -32,17 +32,9 @@ ______ _            _      ______
             width: 100%;
             height: 100%;
         }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none; /* entfernt die weißen Ränder */
-        }
         .buttons {
             position: absolute;
-            bottom: 10px;
+            top: 10px;
             left: 10px;
             z-index: 10;
         }
@@ -58,6 +50,13 @@ ______ _            _      ______
         .buttons a:hover {
             background-color: rgba(0, 0, 0, 0.9);
         }
+        #twitch-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -66,11 +65,23 @@ ______ _            _      ______
             <a href="https://rivals-rave.de/">
                 <i class="fa-solid fa-house"></i> Startseite
             </a>
-            <a href="https://instagram.com/rivals_rave/live">
+            <a href="https://instagram.com/rivals_rave/">
                 <i class="fa-brands fa-instagram"></i> Hier zum Instagram Stream!
             </a>
         </div>
-        <iframe src="https://embed.twitch.tv/?channel=rivals_rave&amp;parent=live.rivals-rave.de" scrolling="yes"></iframe>
+        <div id="twitch-embed"></div>
     </div>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+    <script type="text/javascript">
+        new Twitch.Player("twitch-embed", {
+            channel: "rivals_rave",
+            width: "100%",
+            height: "100%"
+        });
+    </script>
 </body>
 </html>
