@@ -1,6 +1,40 @@
-<iframe
-  id="chat_embed"
-  src="https://www.twitch.tv/embed/ronnyberger/chat?parent=www.example.com"
-  height="500"
-  width="350">
-</iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Iframe</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullscreen-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fullscreen-container">
+        <iframe
+          id="chat_embed"
+          src="https://www.twitch.tv/embed/ronnyberger/chat?parent=live.rivals-rave.de"
+          allowfullscreen>
+        </iframe>
+    </div>
+</body>
+</html>
